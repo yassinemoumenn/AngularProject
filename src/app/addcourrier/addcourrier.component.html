@@ -1,0 +1,182 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+          <div class="wrapper wrapper--w790">
+              <div class="card card-0" style="width: 1300px;
+              margin-left: -10px;
+              margin-right: -1000px;">
+                
+<div class="card-body"  *ngIf ="teml==0">
+    <form method="post" enctype="multipart/form-data">
+    <!--div class="form-row"> 
+        <div class="form-check">
+            langue : &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+            id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+           francais &nbsp; &nbsp;&nbsp;
+            </label>
+         </div>
+
+         <div class="form-check">
+            <input class="form-check-input"  type="checkbox"
+            id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+           Arabe &nbsp; &nbsp;&nbsp;
+            </label>
+         </div>
+        </div-->
+        <div class="form-check">
+            <div  *ngIf ="routemodifier==1">
+    Saisir votr neuveau titre: <input class="input100" type="text"     [(ngModel)]="kk" name="username" placeholder="Titre">
+</div>
+
+        </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Titre<span class="text-danger"> *</span></label> <input type="text" lang="ar" value="test" 
+                        [(ngModel)]="titre" name="titre"
+                        xml:lang="ar" class="form-control" > </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Objet<span class="text-danger"> *</span></label> <input type="text"  [(ngModel)]="objet"  name="objet" class="form-control" > </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">entet<span class="text-danger"> *</span></label>
+                        <textarea id="story" name="story"
+                        rows="5" cols="33" [(ngModel)]="entete" >
+              </textarea> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> 
+                        <label class="form-control-label px-3">pied<span class="text-danger"> *</span></label>
+                        <textarea id="story" name="story"
+                        rows="5" cols="33" [(ngModel)]="pied" >
+              </textarea>
+                         </div>
+                </div>
+                
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Logo<span class="text-danger"> *</span></label> 
+                        <span class="input-group-btn">
+                            <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Logo</span>
+                            <input name="uploaded_file" style="visibility: collapse;
+                            " (change)="selectlogo($event)"  type="file">
+                        </span> </div>
+                    <div class="form-group col-sm-6 flex-column d-flex">  
+                   
+                        <label for="pet-select">choisir un variable:</label>
+                        <select id="pet-select"  style="width:300px;" class="form-select"   [ngModel]="selectedDevice"
+                        (ngModelChange)="selectText($event)" name="sel2" >
+                            <option value="">Select un variable</option>
+                            <option  *ngFor="let variable of variables2" 
+                            [value]="variable">{{variable}}</option>
+                        </select>   
+                    </div>
+                </div>
+                <label for="pet-select">choisir un model:</label>
+                <select id="pet-select"  style="width:300px;" class="form-select"   [ngModel]="selectedDevice"
+                 (ngModelChange)="onChange2($event)" name="sel2" >
+                    <option value="">Select un courrier</option>
+                    <option  *ngFor="let courrier of courriers" 
+                    [value]="courrier.titre">{{courrier.titre}}</option>
+                </select> 
+                <hr>
+                Saisir le body de votre courrier:
+                <!--ckeditor [editor]="Editor"
+                ()="ckEditorFocusOut($event)" 
+                 [(ngModel)]="content"
+                 [config]="ckEditorConfig"
+                 >
+                   
+                </ckeditor-->
+                <ck-editor #ckeditor name="html_template"
+                 [(ngModel)]="content" 
+                 [config]="ckEditorConfig"
+                 (blur)="ckEditorFocusOut($event)"
+>
+                </ck-editor>
+                <!--ck-editor name="editor" #myEditor [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+                <ck-editor name="editor" #myEditor [(ngModel)]="content" 
+                skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+                <ul>
+                        <li (click)="selectText('adasdasd1')">adasdasd1</li>
+                        <li (click)="selectText('adasdasd2')">adasdasd2</li>
+                    </ul-->      
+</form>
+</div> 
+<div *ngIf ="teml==1">
+    <div  id="contentToConvert2">
+        <div class="float-right"  >
+            <img [src]="logo" width="100" height="60"  >
+        </div>
+        <div class="centrage"> {{entete2}}</div>
+        <br><br><br>    <br>
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>              
+                                <strong>Nom_Client:</strong><br>
+                                <strong> </strong>
+                                <strong>Prénom_Client:</strong><br>
+                                <strong></strong>
+                                <strong>Email:</strong>
+
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <strong></strong>
+        <p>
+          rabat :<strong></strong>
+        </p>
+        <p>
+            <strong></strong>
+        </p>
+        <p>
+            <strong>{{nom}}</strong>
+            <strong></strong>
+            <strong><u>date :</u></strong>
+            <strong><u></u></strong>
+        </p>
+        <p align="center">
+            <strong><u>Titre:{{titre2}}</u></strong>
+            <strong><u></u></strong>
+        </p>
+        <p align="left">Monsieur:</p>
+        <p align="left">Objet :{{objet2}}</p>
+        Content:
+        <div lang="ar" [innerHTML]="content"></div>
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer align="center">
+            <h7>
+               pid de page: {{pied}}
+            </h7>
+          </footer>
+    </div>
+    <div  *ngIf ="routemodifier==0">
+        <button type="button" class="btn btn-primary"  (click)="telechargerpdf()">stocker le courrier</button>
+      </div>
+      <div  *ngIf ="routemodifier==1">
+        <button type="button" class="btn btn-primary" sty  (click)="addcoppiercourrier()">stocker le courrier verssion2</button>
+      </div>
+    </div>
+<div>
+    
+    <div  *ngIf ="routemodifier=='0'" style="float: right;">
+        <button type="button"  *ngIf ="teml==0" class="btn btn-primary" style="width:198px" (click)="addcourrier()">Ajouter Courrieer</button>
+    </div>
+    <div *ngIf ="teml==0">
+        <button type="button"  *ngIf ="routemodifier==1" class="btn btn-primary" (click)="showmodifier()">enregistrer le body de copier </button>
+    </div>
+    <!--button type="button" (click)="functiiopdf()">Telecharger PDF</button-->
+  </div>
+</div>
+</div>
+</div>
+</div>  
+
+
+
+    

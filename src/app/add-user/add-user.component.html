@@ -1,0 +1,212 @@
+
+
+
+
+
+
+<div id="content" class="p-1 p-md-1 pt-1">
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Ajouter un nouvel utilisateur</h2>
+                </div>
+                          
+    <div class="row gutters-sm">
+        <div class="col-md-14">
+            
+
+<div class="contact-clean">   
+
+
+    <form #signupForm = "ngForm" method="POST">
+        <div class="form-row m-b-55">
+            <div class="name">Nom </div>
+            <div class="value">
+                <div class="row row-space">
+                    <div class="col-6">
+                        <div class="input-group-desc">
+                            <input class="input--style-5" type="text" 
+                             [(ngModel)]="newuser.nom" name="nom">
+                            <label class="label--desc">Nom</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group-desc">
+                            <input class="input--style-5" type="text" name="prenom" 
+                             [(ngModel)]="newuser.prenom" required>
+                            <label class="label--desc">Prénom</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="name">Adress</div>
+            <div class="value">
+                <div class="input-group-desc">
+                    <input class="input--style-5" type="text"  
+                     [(ngModel)]="newuser.adress" name="adress" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="name">Ville</div>
+            <div class="value">
+                <div class="input-group-desc">
+                    <input class="input--style-5" type="text"  
+                    [(ngModel)]="newuser.ville" name="Ville" required>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="form-row">
+            <div class="name">Email</div>
+            <div class="value">
+                <div class="input-group-desc">
+                    <input class="input--style-5" type="text" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    #email = "ngModel"
+                      [(ngModel)]="newuser.email" name="email" required >
+                </div>
+            </div>
+        </div>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="alert alert-danger">
+                <div *ngIf = "email.errors?.required">
+                    Email field can't be blank
+                </div>
+                <div *ngIf = "email.errors?.pattern && email.touched">
+                    The email id doesn't seem right
+                </div>
+            </div>
+        <div class="form-row">
+            <div class="name">Code CIN</div>
+            <div class="value">
+                <div class="input-group-desc">
+                    <input class="input--style-5" type="number"  
+                     [(ngModel)]="newuser.cin" name="cin" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="name">Numéro</div>
+            <div class="value">
+                <div class="input-group-desc">
+                    <input class="input--style-5" type="number"   
+                    [(ngModel)]="newuser.number" name="Number"
+                     required>
+                </div>
+            </div>
+        </div>
+       
+    <div ngModelGroup="password" #userPassword="ngModelGroup" required >
+        <div class="form-row m-b-55">
+            <div class="name">Password </div>
+            <div class="value">
+                <div class="row row-space">
+                    <div class="col-6">
+                        <div class="input-group-desc">
+                            <input class="input--style-5" type="password"    ngModel name="pwd"
+                     [(ngModel)]="newuser.password"   minlength ="8"
+                     required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group-desc">
+                            <input class="input--style-5" type="password"
+                            ngModel name="confirmPwd"
+                            id="confirmPassword" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="(userPassword.invalid|| userPassword.value?.pwd != userPassword.value?.confirmPwd) && (userPassword.touched)"
+        class="alert alert-danger">
+         
+            <div *ngIf = "userPassword.invalid; else nomatch">
+            Password needs to be more than 8 characters
+            </div>
+            <ng-template #nomatch >
+                Passwords don't match
+            </ng-template>
+        </div>
+       
+    </div> 
+    <div class="form-row"> 
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" (change)="isSelected($event)"
+            [value]="0" [checked]='m' id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+             Message simble &nbsp; &nbsp;&nbsp;
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox"  (change)="isSelected($event)" [checked]='mv'
+            [value]="1" id="flexCheckChecked" >
+            <label class="form-check-label" for="flexCheckChecked">
+              Message avec variable &nbsp; &nbsp; &nbsp;
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" [value]="2" (change)="isSelected($event)"
+             id="flexCheckChecked" [checked]='mp' >
+            <label class="form-check-label" for="flexCheckChecked">
+              Message avec pièce joint
+            </label>
+          </div>
+        </div>   
+
+        <div>
+<!--button class="btn btn--radius-2 btn--red" type="submit">Ajouter </button-->
+<button type="button"  
+(click)="addutilisateur()"  [disabled]="!signupForm.form.valid || userPassword.invalid"  class="btn btn--radius-2 btn--red"
+>Ajouterr</button> {{typeuser}}
+
+<div   *ngIf='typeuser=="admin"'>
+<button type="button" 
+(click)="addclient()"  [disabled]="!signupForm.form.valid || userPassword.invalid"  class="btn btn--radius-2 btn--red"
+>Ajouter Client</button> 
+</div>
+
+        </div>
+    </form>
+            </div>
+
+              <!--div class="frame">
+                <div class="center">
+                    <div class="title">
+                        <h1>Drop file to upload</h1>
+                    </div>
+            
+                    <div class="dropzone">
+                        <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                        <input type="file" class="upload-input" />
+                    </div>
+            
+                    <button type="button" class="btn" name="uploadbutton">Upload file</button>
+            
+                </div>
+            </div-->
+            <!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
+            
+            <!-- NO JS ADDED YET -->
+
+
+    
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+

@@ -1,0 +1,290 @@
+
+    <div id="content" >
+        <div>
+            <div >
+                <div >
+                    <div class="form-row"> 
+                        <div class="form-check">
+                          <h1 class="btn btn-primarysecond2">1-Generation Information </h1>
+                        </div>
+                        <div class="form-check">
+                          <h1 class="btn btn-primarysecond2">2-Add Reipcient</h1>
+                        </div>
+                        <div class="form-check">
+                          <h1 class="btn btn-primarysecond2">3-Compose message</h1>
+                        </div>
+                        <div class="form-check">
+                          <h1 class="btn btn-primary">4-Summary</h1>
+                        </div>
+                      </div>  
+                      
+                      
+
+
+
+
+
+
+                      <hr class="my-4" />
+
+
+
+
+
+                  
+                      <div id="content" class="p-1 p-md-1 pt-1">
+                        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                      
+                      </ul>
+                        <div class="col-md-8">
+                          <div class="card mb-3" style="width: 1228px;">
+                            <div class="card-body" style="width: 1000px;">
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">Nom  de compagne</h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{nomcomp}} 
+                                </div>
+                              </div>
+                         
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">Nom file csv </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{nomfilcsvcompagne}}   
+                                </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">Date de compagne </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{datecompagne}} 
+                                </div>
+                              </div>
+                             
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">type compagne</h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{typecompagne}}
+                                </div>
+                              </div>
+                            
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">Nembre de message </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{nembreligneofdatatcompagne}}                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">nembreunite </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{nembreunite}}
+                                            </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">Facture total</h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{facturetotalcompagne}} Dh
+                                            </div>
+                              </div>
+
+                              
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">Unite Facature </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{unitecture}} Dh
+                                            </div>
+                              </div>
+                              
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">la taille de messsgae </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{taillemessage}}  caractere
+                                            </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-3">
+                                  <h4 class="mb-0">la langue de messsgae </h4>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                  {{languemessagecompagne}}  
+                                            </div>
+                              </div>
+                          
+
+                              
+                              <hr>
+                              <div class="row">  
+                                <div class="value">
+                                  <div class="row row-space">
+                                    <div class="col-5">
+                              <button type="button"  href="/modifer"
+                                 (click)='precedent2()' style="width: 150px;"
+                              class="btn btn-primarysuivant">
+                              Precedent</button> 
+                            </div>
+                            <div class="col-6">
+                      
+                              <button type="button"   
+                              class="btn btn-primarysuivant" style="width: 210px;"><a
+                              href="/modifierpassword" style="    color: white;">
+                               Lancer Campagne</a></button> 
+                               <button type="button"   style="margin-left: 69px;"
+                               class="btn btn-primaryannuller"><a
+                               (click)='lancercompagne()' >Annuler</a></button> 
+                            
+                            </div>
+                      
+                            </div>
+                          </div>
+                            </div>
+                            </div>
+                          </div>
+                         
+                        </div>
+                      </div>
+                      
+
+
+
+
+
+
+
+
+
+                      <!--div id="content" class="p-1 p-md-1 pt-1">
+                        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                      </ul>
+                        <div class="col-md-8">
+                          <div class="card mb-3" style="width: 1228px;">
+                            <div class="card-body" style="width: 1000px;">
+                              <div class="row">
+                                <label for="file" class="label-file">
+                                    <h3 style="color:
+                                     mediumblue; size: 10ch; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+                                    align-items: center;">le nom  de votre compagne compagne :
+                                 </h3><div class="name">{{nomcomp}}</div></label>
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file">
+                                    <h3  style="color:
+                                    mediumblue; size: 10ch; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+                                   align-items: center;">la nom fichier upload:</h3>
+                                   <div class="name">{{nomfilcsvcompagne}}</div>
+                                </label>
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file"><h3  style="color:
+                                    mediumblue; size: 10ch; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+                                   align-items: center;">la date de creation de votre compagne:</h3> 
+                                   <div class="name">{{datecompagne}}</div>
+                                   </label>
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file"> <h3  style="color:
+                                    mediumblue; size: 10ch; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+                                   align-items: center;">le type de campagne 
+                                   :</h3><div class="name"> {{typecompagne}}</div></label>
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file"> 
+                                  <h3>nombre de message a envoyer:
+
+                                  </h3><div class="name">{{nembreligneofdatatcompagne}} </div></label>
+
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file"><h3>Facture 
+                                   : </h3> <div class="name">{{facturetotalcompagne}} Dh</div></label>
+
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file">
+                                  <h3>unite de facture  : </h3> <div class="name">
+                                    {{unitecture}} Dh</div></label>
+
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file"> 
+                                  <h3>la langue de votre message:
+
+                                  </h3><div class="name">{{languemessagecompagne}}
+                                </div></label>
+         
+                              </div>
+                              <div class="row">
+                    <label for="file" class="label-file"><h3>le nombre des caracteres de 
+                      votre message </h3> <div class="name">{{taillemessage}}</div></label>
+                               
+         
+                              </div>
+                              <div class="row">
+                                <label for="file" class="label-file"> <h3>la langue de votre message:</h3><div class="name">{{languemessagecompagne}}
+                                </div></label>
+         
+                              </div>
+
+                              <hr>
+                            
+                              <div class="row">  
+                                <div class="value">
+                                  <div class="row row-space">
+                                    <div class="col-5">
+                              <button type="button"  href="/modifer" 
+                              class="btn btn-primaryprecedent"><a
+                              (click)='precedent2()' >Precedent</a></button> 
+                            </div>
+                            <div class="col-6">
+                      <table style="width: 100px;">
+                          <tr>
+                              <td>
+                                <button type="button"   
+                                class="btn btn-primarysuivant"><a
+                                (click)='lancercompagne()' >Lancer</a></button> 
+                              </td>
+                              <td>
+                                <button type="button"   
+                                class="btn btn-primaryannuller"><a
+                                (click)='lancercompagne()' >Annuler</a></button> 
+                              </td>
+                          </tr>
+                      </table>
+                             
+                            </div>
+                      
+                            </div>
+                          </div>
+                            </div>
+                            </div>
+                          </div>
+                         
+                        </div>
+                      </div-->
+                      
+                      
+                      
+              
+    </div>
+</div>
+</div>
+    </div>
+  
+
+
+    

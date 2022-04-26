@@ -1,0 +1,204 @@
+
+      <!-- Page Content  -->
+
+
+
+
+<div class="row">
+    <div class="col-md-4" >
+      <div class="card card-chart"  style="width: 13cm; margin-left: 14px;height: 350px;" >
+        <div style="margin-top: -19px;
+        margin-left: 198px;">             
+          <label for="pet-select"></label>
+          <select id="pet-select"  style="width:90px; background-color:rgb(235, 230, 234);"
+           class="form-select"    [ngModel]="selectedDevice"
+          (ngModelChange)="selectText($event)" name="sel2" >
+              <option  *ngFor="let variable of variables2" 
+              [value]="variable">{{variable}}</option>
+  
+          </select>   
+      </div>
+       <table class="mytable" style="border: 0px solid orange; 
+          margin-left: 16px; width: 12cm; height: 10cm;">
+        <tr>
+          <th>januar  <h5> {{mois[2]}}</h5>  </th>
+          <th>february  <h5> {{mois[2]}}</h5></th>
+          <th>march  <h5> {{mois[3]}}</h5></th>
+        </tr>
+        <tr>
+          <th>avril  <h5> {{mois[4]}}</h5></th>
+          <th>may  <h5> {{mois[5]}}</h5></th>
+          <th>june <h5>{{mois[6]}}</h5> </th>
+        </tr>
+        <tr>
+          <th>july   <h5> {{mois[7]}}</h5></th>
+          <th>august  <h5>{{mois[8]}}</h5></th>
+          <th>September <h5> {{mois[9]}}</h5></th>
+        </tr>
+        <tr>
+          <th>October   <h5> {{mois[10]}}</h5></th>
+          <th>November    <h5> {{mois[11]}}</h5> </th>
+          <th>December    <h5> {{mois[12]}}</h5> </th>
+        </tr>
+      </table>
+      </div>
+    </div>
+    <div class="col-md-4" style="margin-left: 250px;">
+      <div class="card card-chart" style="width: 13cm; height: 350px;">
+        <full-calendar [options]="calendarOptions3"
+         style="width: 488px;
+        height: 326px;"></full-calendar>
+      </div>
+    </div>
+</div>
+
+      <!--div class="card" style="width: 1400px; height: 10cm;">
+      <table>
+        <tr>
+          <td >
+            <div class="card card-chart" style="height: 450px;
+            width: 500px; margin-left: 120px;">
+              <full-calendar [options]="calendarOptions2"></full-calendar>
+            </div>
+          </td>
+        <td>
+    <div style="width: 10cm; height: 10cm;">
+      <div style="margin-left: 3cm; ;">             
+        <label for="pet-select">Year:</label>
+        <select id="pet-select"  style="width:90px;"
+         class="form-select"    [ngModel]="selectedDevice"
+        (ngModelChange)="selectText($event)" name="sel2" >
+            <option value="">2021</option>
+            <option  *ngFor="let variable of variables2" 
+            [value]="variable">{{variable}}</option>
+
+        </select>   
+    </div>
+<div  class="card card-chart" style="height: 450px;
+width: 500px; margin-left: 120px;">
+    <table  style="border: 1px solid orange; width: 10cm; height: 8cm;">
+      <tr>
+        <th>januar  <h5> {{mois[1]}}</h5>  </th>
+        <th>february  <h5> {{mois[2]}}</h5></th>
+        <th>march  <h5> {{mois[3]}}</h5></th>
+      </tr>
+      <tr>
+        <th>avril  <h5> {{mois[4]}}</h5></th>
+        <th>may  <h5> {{mois[5]}}</h5></th>
+        <th>june <h5>{{mois[6]}}</h5> </th>
+      </tr>
+      <tr>
+        <th>july   <h5> {{mois[7]}}</h5></th>
+        <th>august  <h5>{{mois[8]}}</h5></th>
+        <th>September <h5> {{mois[9]}}</h5></th>
+      </tr>
+      <tr>
+        <th>October   <h5> {{mois[10]}}</h5></th>
+        <th>November    <h5> {{mois[11]}}</h5> </th>
+        <th>December    <h5> {{mois[12]}}</h5> </th>
+      </tr>
+    </table>
+  </div>
+    </div>
+         </td>
+        </tr>
+      </table>
+    </div-->
+
+
+<section class="ftco-section" style="margin: 20px;
+width: 84%;">
+  <div class="container">
+    <div class="row justify-content-left">
+      <div class="col-md-6 text-center mb-5">
+        
+        <i class="bi bi-plus"></i>
+      </div>
+    </div>
+    <div class="row" style="    width: 1350px;">
+      <div class="col-md-12">
+        <div class="table-wrap" style="margin-left: -22px;   margin-top: -137px;">
+          <div class="card-header card-header-primary" style="    background-color: white;
+          ">
+            
+            </div>
+         
+          <table class="table table-responsive-xl">
+            <thead>
+              <tr>
+                <th >#</th>
+                <th>nom Campagne</th>
+                                  <th >date</th>
+                                  <th >type de Campagne</th>
+                                  <th >id user</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let cam of Compagneuser"> 
+              <tr > 
+                 <td scope="row">
+                   {{cam.id}}</td> 
+                 <td>{{cam.nom }} </td> 
+                 <td>{{cam.datecreation.substring(0,10)}} </td> 
+                 <td>{{cam.type }} </td> 
+                 <td>{{cam.iduser }} </td> 
+              
+                                        </tr>                                     
+                                                  
+   </tbody> 
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- 3qal hna 7basssna div id="content" class="p-1 p-md-1 pt-1">
+        <div class="container">   
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      <h4  class="card-title ">Tables des Campagne</h4>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">nom Campagne</th>
+                                  <th scope="col">date</th>
+                                  <th scope="col">type de Campagne</th>
+                                  <th scope="col">id user</th>
+                                                               
+                                </tr>
+                            </thead>
+                            <tbody  *ngFor="let cam of Compagneuser"> 
+                              <tr > 
+                                 <td scope="row">
+                                   {{cam.id}}</td> 
+                                 <td>{{cam.nom }} </td> 
+                                 <td>{{cam.datecreation.substring(0,10)}} </td> 
+                                 <td>{{cam.type }} </td> 
+                                 <td>{{cam.iduser }} </td> 
+                              
+                                                        </tr>                                     
+                                                                  
+                   </tbody> 
+                          </table>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          
+         </div>
+         </div-->
+        

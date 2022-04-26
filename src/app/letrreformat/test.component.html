@@ -1,0 +1,118 @@
+<div  class="wrapper d-flex align-items-stretch">
+    <div>
+        <app-nav-hor ></app-nav-hor>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+       
+    <div class="form-row m-b-55">
+        <div class="name">header </div>
+        <div class="value">
+            <div class="row row-space">
+                <div class="col-6">
+                    <div class="input-group-desc">
+                        <label for="file">Sélectionner le fichier à envoyer</label>
+                        <input type="file" id="file" name="file" multiple>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group-desc">
+                        <label for="file">Sélectionner le fichier à envoyer</label>
+                        <input type="file" id="file" name="file" multiple>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div >
+        <div class="name">Adress</div>
+        <div class="value">
+            <div class="form-group"><textarea class="form-control"  
+                name="message" placeholder="Message"
+                rows="14"></textarea></div>
+         
+        </div>
+    </div>
+    <div id="contentToConvert"  *ngIf = "a==1;">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <strong>«Nom_Client»</strong>
+                                <strong> </strong>
+                                <strong>«Prénom_Client»</strong>
+                                <strong></strong>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <strong></strong>
+        <p>
+            الرباط في<strong> :10/10/2018</strong>
+        </p>
+        <p>
+            <strong></strong>
+        </p>
+        <p>
+            <strong>{{nom}}</strong>
+            <strong>:</strong>
+            <strong><u>مرجعــــــــــي</u></strong>
+            <strong><u></u></strong>
+        </p>
+        <p align="center">
+            <strong><u>رسالــة إنــــذار</u></strong>
+            <strong><u></u></strong>
+        </p>
+        <p align="right">سيــــــــدي (تي)،</p>
+        <p align="right">نعلمكم أننا تسلمنا من طرف مؤسسة</p>
+        <p align="right">
+        ملف الدين الذي تخلفتم عن أداء أقساطه</p>
+        <p align="right">
+        وانه تخلد بذمتكم مبلغ ......</p>
+        <p align="right">
+            لذا فإننا ننذركم بضرورة الاتصال بالرقم التالي:  
+        </p>
+        
+        <p align="right">
+            
+        </p>
+        <p align="center">
+            <strong>06 </strong>
+            <strong>61</strong>
+            <strong> </strong>
+            <strong>72</strong>
+            <strong> </strong>
+            <strong>02</strong>
+            <strong> </strong>
+            <strong>11</strong>
+           
+        </p>
+        <p dir="RTL">
+            لتؤذوا مبلغ الدين المذكور أعلاه فور توصلكم بهذا الإنذار.
+        </p>
+        <p dir="RTL">
+            وهذا، وفي حالة عدم استجابتكم، ستحملون التبعات والنتائج الناجمة عن تنفيذ
+            الحكم.
+        </p>
+        <p align="right">
+            في حالة تسوية وضعيتكم إزاء موكلتنا، نلتمس منكم أن توافونا بوصل الأداء.
+        </p>
+        <p align="right">
+            وتقبلوا سيــــــــدي (تي)، أسمى عبارات التقدير والاحترام.
+        </p>
+    </div>
+      <div>
+        <button type="button" (click)="functiiopdf()">Telecharger PDF</button>
+      </div>
+ 
+</form>
+<div>
+    <button type="button" (click)="functiiopdf()">Telecharger PDF</button>
+  </div>
+</div>
+
+
+    

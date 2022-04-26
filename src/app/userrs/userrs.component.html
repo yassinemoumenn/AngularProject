@@ -1,0 +1,207 @@
+
+<section class="ftco-section" style="margin: 20px;
+width: 84%;">
+  <div class="container">
+    <div class="row justify-content-left">
+      <div class="col-md-6 text-center mb-5">
+        
+        <i class="bi bi-plus"></i>
+      </div>
+    </div>
+    <div class="row" style="    width: 1350px;">
+      <div class="col-md-12">
+        <div class="table-wrap" style="margin-left: -64px;   margin-top: -137px;">
+          <div class="card-header card-header-primary" style=" 
+          background-color: white;
+          ">
+            <table style="width: 1000px; margin-left: 26px;">
+              <tr>
+                <th> <h4 *ngIf='typeuser=="client"' class="card-title " style="width: 1240px;">Tables des utilisateur</h4>
+                  <h4 *ngIf='typeuser=="admin"' class="card-title"  style="width: 1240px;">Tables des Clients</h4>
+               </th>
+               <th> 
+                 <button  style="background-color: #007BBA ;" type="button" class="btn btn-secondary">
+                <i class="fa fa-plus"><a style="color: white;" href="ajouteruser">add user</a> </i></button></th>
+              </tr>
+            </table>
+            </div>
+         
+          <table class="table table-responsive-xl" style="margin-left: 26px;">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>adress</th>
+                <th>number</th>
+                <th>cin</th>
+                <th>ville</th>
+                
+              </tr>
+            </thead>
+            <tbody tbody  *ngFor="let user of userforconnecter ">
+              <tr class="alert" role="alert">
+                <td class="d-flex align-items-center">
+                  <div class="img"  [ngStyle]="{'background-image':'url('+ user.imageprofil +')'}"
+
+                  ></div>
+                  <div class="pl-3 email">
+                    <span>{{user.email}}</span>
+                    <span>Added: 01/03/2020</span>
+                  </div>
+                </td>
+                <td>{{user.nom }} {{user.prenom }}</td> 
+                <td>{{user.adress }}</td> 
+                <td>{{user.number}}</td> 
+                <td>{{user.cin}}</td> 
+                <td class="status"><span class="active">{{user.ville}}</span></td>
+                <td>
+                  <a   (click)='modifier(user.id)' class="edi2t" title="Edit2" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <a   (click)='deleteuser(user.id)' class="dele2te" title="Delete2" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+              </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+      <!-- Page Content  -->
+      <!--div id="content" class="p-1 p-md-1 pt-1">
+        <div class="container">   
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      <h4 *ngIf='typeuser=="client"' class="card-title ">Tables des utilisateur</h4>
+                      <h4 *ngIf='typeuser=="admin"' class="card-title ">Tables des Clients</h4>      
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table" *ngIf="typeuser=='client'">
+                          <thead class=" text-primary">
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">nom</th>
+                                <th scope="col">prenom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">adress</th>
+                                <th scope="col">number</th>
+                                <th scope="col">cin</th>
+                                <th scope="col">ville</th>
+                               
+                              </tr>
+                          
+                          </thead>
+                          <tbody  *ngFor="let user of users  ">  
+                            <tr  *ngIf='user.type=="utilisateur" && user.idClient==iduser'> 
+                               <td scope="row">{{user.id}}</td> 
+                               <td>{{user.nom }} </td> 
+                               <td>{{user.prenom}}</td> 
+                               <td>{{user.email }}</td> 
+                               <td>{{user.adress }}</td> 
+                               <td>{{user.number}}</td> 
+                               <td>{{user.cin}}</td> 
+                               <td>{{user.ville}}</td> 
+                               <td>
+                                <a   (click)='modifier(user.id)' class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                <a   (click)='deleteuser(user.id)' class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                             </tr>                                     
+                                                                
+                 </tbody> 
+                        </table>
+
+
+                        <table class="table" *ngIf="typeuser=='admin'">
+                          <thead class=" text-primary">
+                          
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">nom</th>
+                                <th scope="col">prenom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">adress</th>
+                                <th scope="col">number</th>
+                                <th scope="col">cin</th>
+                                <th scope="col">ville</th>
+                               
+                              </tr>
+                          
+                          </thead>
+                          <tbody  *ngFor="let user of users  ">  
+                            <tr  *ngIf='user.type=="client"'> 
+                               <td scope="row">{{user.id}}</td> 
+                               <td>{{user.nom }} </td> 
+                               <td>{{user.prenom}}</td> 
+                               <td>{{user.email }}</td> 
+                               <td>{{user.adress }}</td> 
+                               <td>{{user.number}}</td> 
+                               <td>{{user.cin}}</td> 
+                               <td>{{user.ville}}</td> 
+                               <td>
+                                <a   (click)='modifier(user.id)' class="edi2t" title="Edit2" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                <a   (click)='deleteuser(user.id)' class="dele2te" title="Delete2" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                             </tr>                                     
+                                                                
+                 </tbody> 
+                        </table>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div-->
+          
+          
+          <!--div class="card shadow mb-4">                        
+            <div class="card-body">     
+                  <table class="table table-striped" >            <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">nom</th>
+                      <th scope="col">prenom</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">adress</th>
+                      <th scope="col">number</th>
+                      <th scope="col">cin</th>
+                      <th scope="col">ville</th>
+                     
+                    </tr>
+                  </thead>
+                                                          
+            <tbody *ngFor="let user of users  ">  
+                    <tr > 
+                       <td scope="row">{{user.id}}</td> 
+                       <td>{{user.nom }} </td> 
+                       <td>{{user.prenom}}</td> 
+                       <td>{{user.email }}</td> 
+                       <td>{{user.adress }}</td> 
+                       <td>{{user.number}}</td> 
+                       <td>{{user.cin}}</td> 
+                       <td>{{user.ville}}</td> 
+                       <!--td><a class="btn btn-danger" (click)="supprimerUtil(util)">Supprimer</a></td> 
+                     </tr>                                     
+                                                        
+          </tbody>     
+          </table>    
+         </div>   
+        </div>
+         </div>
+         </div-->
+        

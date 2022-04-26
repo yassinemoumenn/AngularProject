@@ -1,0 +1,132 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="row gutters-sm">
+          
+            <div class="col-md-4 mb-3" *ngIf='varboss=="false"'>
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img [src]="url" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4> modifier image
+                       
+                      </h4>
+                    </div>
+                    <!--form class="md-form"-->
+                      <div class="file-field">
+                        <a class="btn-floating purple-gradient mt-0 float-left">
+                          <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                          <input type="file" (change)="selectprofil($event)">
+             
+                        </a>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="Upload your file">
+                        </div>
+                      </div>
+                    <!--/form-->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 "    >
+
+              <div class="card">
+                <div class="card-body">
+
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Nom</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" 
+                            [(ngModel)]="newdata.nom"  required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-sm-3">
+                          <h6 class="mb-0">Prenom</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                          <input type="text" class="form-control" 
+                          [(ngModel)]="newdata.prenom"  required >
+                      </div>
+                  </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            #email = "ngModel"
+                            [(ngModel)]="newdata.email"  required >
+                        </div>
+                    </div>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf = "email.errors?.required">
+                        Email field can't be blank
+                    </div>
+                    <div *ngIf = "email.errors?.pattern && email.touched">
+                        The email id doesn't seem right
+                    </div>
+                </div>
+                    
+
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Phone</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control"
+                            #Number = "ngModel"
+                     pattern="0+[6|7]+[0-9]{8}" name="Number"
+     
+                            [(ngModel)]="newdata.number"  required >
+                        </div>
+                    </div>
+
+                    <div *ngIf="Number.invalid && (Number.dirty || Number.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf = "Number.errors?.required">
+                        Number field can't be blank
+                    </div>
+                    <div *ngIf = "Number.errors?.pattern && Number.touched">
+                        The Number id doesn't seem right
+                    </div>
+                </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">ville</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" 
+                            [(ngModel)]="newdata.ville" required >
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" 
+                            [(ngModel)]="newdata.adress" required >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="button" (click)="modofierprofil()"  
+                            class="btn btn-primary px-4"
+                            value="Save Changes">
+                        </div>
+                       
+                    </div>
+                              
+              </div>
+            </div>
+
+
+         </div>
+        </div>
+    </div>

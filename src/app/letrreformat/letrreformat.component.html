@@ -1,0 +1,133 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+          <div class="wrapper wrapper--w790">
+              <div class="card card-5">
+                  <div class="card-heading">
+                      <h2 class="title">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;Creer une Coupier de courrier&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</h2>
+                  </div> 
+<div class="card-body"  *ngIf ="teml==0">
+    <form method="post" enctype="multipart/form-data">
+    <!--div class="form-row"> 
+        <div class="form-check">
+            langue : &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+            id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+           francais &nbsp; &nbsp;&nbsp;
+            </label>
+         </div>
+
+         <div class="form-check">
+            <input class="form-check-input"  type="checkbox"
+            id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+           Arabe &nbsp; &nbsp;&nbsp;
+            </label>
+         </div>
+        </div-->
+        <div class="form-check">
+
+        </div>
+                <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Titre<span class="text-danger"> *</span></label> <input type="text" lang="ar" value="test" 
+                      value="titre2"  [(ngModel)]="titre2" name="titre2"
+                        xml:lang="ar" class="form-control" > </div>
+                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Objet<span class="text-danger"> *</span></label> <input type="text" 
+                         [(ngModel)]="objet2"  name="objet2" class="form-control" > </div>
+                </div>
+              
+              
+                <hr>
+              
+                Saisir le body de votre courrier:
+                <ck-editor #ckeditor name="html_template"
+                [(ngModel)]="content2" 
+                [config]="ckEditorConfig"
+                (blur)="ckEditorFocusOut($event)"
+>
+               </ck-editor>
+  
+</form>
+
+
+
+</div> 
+<div *ngIf ="teml==1">
+    <div  id="contentToConvert2">
+        <div class="float-right"  >
+            <img [src]="logo" width="100" height="60"  >
+        </div>
+        <div class="centrage"> {{entete2}}</div>
+        <br><br><br>
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>              
+                                <strong>Nom_Client:</strong><br>
+                                <strong> </strong>
+                                <strong>Prénom_Client:</strong><br>
+                                <strong></strong>
+                                <strong>Email:</strong>
+
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <strong></strong>
+        <p>
+          rabat :<strong></strong>
+        </p>
+        <p>
+            <strong></strong>
+        </p>
+        <p>
+            <strong>{{nom}}</strong>
+            <strong></strong>
+            <strong><u>date :</u></strong>
+            <strong><u></u></strong>
+        </p>
+        <p align="center">
+            <strong><u>Titre:{{titre2}}</u></strong>
+            <strong><u></u></strong>
+        </p>
+        <p align="left">Monsieur:</p>
+        <p align="left">Objet :{{objet2}}</p>
+        Content:
+        <div lang="ar" [innerHTML]="content2"></div>
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer align="center">
+            <h7>
+               pid de page: {{pied}}
+            </h7>
+          </footer>
+    </div>
+    <div  *ngIf ="routemodifier==0">
+        <button type="button" class="btn btn-primary"  (click)="telechargerpdf()">stocker le courrier</button>
+      </div>
+      <div  *ngIf ="routemodifier==1">
+        <button type="button" class="btn btn-primary"  (click)="addcoppiercourrier()">stocker le courrier copier</button>
+      </div>
+    </div>
+<div>
+    
+ 
+    <div *ngIf ="teml==0">
+        <button type="button"  *ngIf ="routemodifier==1" class="btn btn-primary" (click)="showmodifier()">enregistrer la copier </button>
+    </div>
+    <!--button type="button" (click)="functiiopdf()">Telecharger PDF</button-->
+  </div>
+</div>
+</div>
+</div>
+</div>  
+
+
+
+    

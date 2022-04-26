@@ -1,0 +1,17 @@
+<div  class="wrapper d-flex align-items-stretch">
+   
+    <div>
+        <app-nav-hor ></app-nav-hor>
+    </div>
+    <div id="content" class="p-1 p-md-1 pt-1">
+      
+<p>utilisateurs works hhh!</p>
+<div class="container">   <div class="card shadow mb-4">                        
+    <div class="card-body">       <table >             <thead>                <tr>                
+        <th>Liste des utilisateurs</th>               </tr>              
+    </thead>                                              
+    <tbody *ngFor="let utilisateur of utilisateurs">                        
+        <tr >                          
+        <td>{{utilisateur}}</td>                        
+     </tr>                                                    
+</tbody>     </table>     </div>   </div> </div></div></div>

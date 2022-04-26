@@ -1,0 +1,214 @@
+
+<div id="content" class="p-1 p-md-1 pt-1" style="margin-top: -41px;">
+  <div class="row mt-5 align-items-center" style="margin-right: 186px;
+  margin-left: -100px;">
+    <div class="col-md-3 text-center mb-5">
+        <div class="avatar avatar-xl">
+            <img [src]="urlimage" alt="..." class="avatar-img rounded-circle" />
+        </div>
+    </div>
+    <div class="col">
+        <div class="row align-items-center">
+            <div class="col-md-7" style=" margin-left: -92px;">
+                <h4 class="mb-1"> {{userprenom}}  {{usernom}} </h4>
+                <p class="small mb-3"><span class="badge badge-dark">   {{useremail}} </span></p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-7">
+                <p class="text-muted">
+               
+                </p>
+            </div>
+   
+        </div>
+    </div>
+</div>
+
+<hr class="my-4" />
+<div id="content" class="p-1 p-md-1 pt-1">
+  <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active"
+         id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+         aria-selected="false">About</a>
+    </li>
+</ul>
+  <div class="col-md-8">
+    <div class="card mb-3">
+      <div class="card-body" style="width: 1000px;">
+        <div class="row">
+          <div class="col-sm-3">
+            <h4 class="mb-0">Nom </h4>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{usernom}} 
+          </div>
+        </div>
+   
+        <div class="row">
+          <div class="col-sm-3">
+            <h4 class="mb-0">Prenom </h4>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{userprenom}}  {{usernom}} 
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-3">
+            <h4 class="mb-0">CIN </h4>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{usercin}} 
+          </div>
+        </div>
+       
+        <div class="row">
+          <div class="col-sm-3">
+            <h4 class="mb-0">Email</h4>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{useremail}}
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-sm-3">
+            <h4 class="mb-0">Phone</h4>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{usernumber}}                </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h4 class="mb-0">Address</h4>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{useradress}}    
+                      </div>
+        </div>
+        <hr>
+        <div class="row">  
+          <div class="value">
+            <div class="row row-space">
+              <div class="col-5">
+        <button type="button"  href="/modifer"  style="width: 230px;"
+        class="btn btn-primarysuivant"><a style="    color: white;"
+        href="/modifer">modifier votre profil</a></button> 
+      </div>
+      <div class="col-6">
+
+        <button type="button"   
+        class="btn btn-primarysuivant" style="width: 230px;"><a
+        href="/modifierpassword" style="    color: white;">modifier votre password</a></button> 
+      </div>
+
+      </div>
+    </div>
+      </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+
+    <!--div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img  [src]="urlimage"  alt="Admin" class="rounded-circle" width="150">
+                <div class="mt-3">
+                  <h4> {{typeusr}}
+                    {{userprenom}}  {{usernom}} </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Nom </h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{usernom}} 
+                </div>
+              </div>
+         
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Prenom </h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{userprenom}}  {{usernom}} 
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">CIN </h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{usercin}} 
+                </div>
+              </div>
+             
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{useremail}}
+                </div>
+              </div>
+            
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Phone</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{usernumber}}                </div>
+              </div>
+          
+            
+        
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Address</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{useradress}}    
+                            </div>
+              </div>
+              <hr>
+              <div class="row">  
+                <div class="value">
+                  <div class="row row-space">
+                    <div class="col-5">
+              <button type="button"  href="/modifer" 
+              class="btn btn--radius-2 btn--red"><a
+              href="/modifer">modifier votre profil</a></button> 
+            </div>
+            <div class="col-6">
+
+              <button type="button"   
+              class="btn btn--radius-2 btn--red"><a
+              href="/modifierpassword">modifier votre password</a></button> 
+            </div>
+
+            </div>
+          </div>
+            </div>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+    </div-->
+</div>

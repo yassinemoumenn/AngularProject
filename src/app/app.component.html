@@ -1,0 +1,50 @@
+<div  class="wrapper d-flex align-items-stretch">
+  <div *ngIf="eta==islog">
+  <app-nav-hor ></app-nav-hor>
+  </div>
+
+
+  <div id="content" class="p-4 p-md-5">
+
+  <nav *ngIf="eta==islog" style="margin-top: -29px;
+  margin-left: -30px;
+  margin-right: -30px;" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ml-auto" style="float: right;">
+
+          <li class="nav-item dropdown nav-user">
+          <a class="nav-link nav-user-img" 
+          href="#" id="navbarDropdownMenuLink2" 
+          data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+      {{useremail}}
+          <img [src]="urlimage" alt=""
+               class="user-avatar-md rounded-circle">
+              </a>
+         <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+             <div class="nav-user-info">
+                
+             </div> <a class="dropdown-item" href="home">
+             <i class="fas fa-user mr-2"></i>Account</a> 
+           <a  href="login2"  class="dropdown-item"  (click)="deconnexion()"><i class="fas fa-power-off mr-2">
+             </i>Logout</a>
+         </div>
+     </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  <div >
+  <router-outlet></router-outlet>
+  </div>
+  </div>
+
+
+
+<div>

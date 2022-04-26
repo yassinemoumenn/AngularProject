@@ -1,0 +1,1 @@
+$(function(){$("#bars li .bar").each(function(e,d){var f=$(this).data("percentage");$(this).animate({height:f+"%"},1000)})});

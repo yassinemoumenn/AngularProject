@@ -1,0 +1,22 @@
+th{
+    border: 1px solid rgb(101, 112, 158);
+    width: 2cm;
+    height: 0,cm;
+    size: 1cm;
+    text-size-adjust: 3cm;
+    
+    text-decoration: rebeccapurple;
+}
+td{
+    width: 6cm;
+}
+h5{
+    background-color: orangered;
+    width: 20px;
+    size: 1cm;
+    border-radius: 20%;
+    color: seashell;
+}
+.mytable{
+    background-color: rgb(235, 230, 234);
+}

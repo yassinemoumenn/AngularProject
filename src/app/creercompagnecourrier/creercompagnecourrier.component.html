@@ -1,0 +1,133 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Crreer Compagne Courrier</h2>
+                    </div>
+                              
+        <div class="row gutters-sm">
+            <div class="col-md-14">
+                <label for="pet-select">choisir un model:</label>
+                <select id="pet-select"  style="width:300px;" class="form-select"  
+                 [ngModel]="selectedDevice"
+                 (ngModelChange)="onChange2($event)" name="sel2" >
+                    <option value="">Select model courrier</option>
+                    <option  *ngFor="let courrier of courriers" 
+                    [value]="courrier.titre">{{courrier.titre}}</option>
+                </select> 
+
+                <!--label for="pet-select">choisir un compagne:</label>
+                <select id="pet-select"  style="width:300px;" class="form-select"  
+                 [ngModel]="selectedDevice"
+                 (ngModelChange)="onChange4($event)" name="sel2" >
+                    <option value="">Select un compagne</option>
+                    <option  *ngFor="let compagne of compagnecsv" 
+                    [value]="compagne.nom">{{compagne.nom}}</option>
+                </select--> 
+                <!--table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>titre courrier</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody  *ngFor="let courrier of courriers" >
+                        <tr>
+                            <td>{{courrier.id}}</td>
+                            <td>{{courrier.titre}}</td>
+                            <td>
+                                <a  href="viewcourrier"  disabled="disabled" (click)="view(courrier)" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                                <a  (click)="edit(courrier)" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                <a  (click)="delete(courrier.id)"  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table-->
+                <!--div class="container">
+                    <h1 class="mt-4">Selectionner votre file csv</h1>
+                   
+                    <input class="form-control mb-5" type="file" class="upload" (change)="changeListener($event.target.files)">
+                 
+                    <table class="table table-bordered table-dark mt-5">
+                      <thead>
+                        <tr> 
+                         <th>l'entet de file csv</th>
+                          <th *ngFor="let item of lines[0]; let i = index">{{item}}{{i}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       
+                     <tr>
+                        <td>variable correspondant</td>
+
+                          <td *ngFor="let itemm of lines[0]; let j = index">
+                            <select id="idder"  style="width:55px;" class="form-select"  
+                            [ngModel]="selectedDevice"
+                            (ngModelChange)="onChange3($event,itemm,j)" name="sel2" >
+                               <option value="">Select un variable</option>
+                               <option  *ngFor="let item of touslesvariable; let i = index" 
+                               [value]="item">{{item}}</option>
+                           </select> 
+                          </td>
+                    </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <tr *ngFor="let item of linesR[0]; let i = index">
+                    <td *ngFor="let itemm of lines[0]; let j = index">{{item[j]}}</td>
+                  </tr-->
+<div class="contact-clean">   
+
+    
+                <form class="md-form" #envmesssag = "ngForm">
+                
+                <div>
+                    <!--div class="value">
+                        <div class="input-group-desc">
+                            <label for="file" class="label-file"> <div class="name">Importer un fichier</div></label>
+                            <input type="file" id="file" class="input-file"  
+                            />
+                        </div>
+
+   
+                      
+                    </div-->
+                </div>
+                <div>
+                    <div class="value">
+                       <!--ul *ngFor="let n of excelObservable | async">
+                        <li>{{n.numeroDossier}}--------{{n.telClient}}</li>
+
+                       </ul-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9 text-secondary">
+                        <input type="button"   (click)="publipostage()"
+                        class="btn btn-primary px-4" value="evoyer">
+                    </div>
+                   
+                </div>
+*                
+                  </form>
+
+                </div>
+
+
+        
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+  
+
+
+    

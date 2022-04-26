@@ -1,0 +1,97 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div >
+          <div >
+              <div>  
+<div  style="height: 500px;">
+  <div class="form-row"> 
+    <div class="form-check">
+      <h1 class="btn btn-primary">1-Generation Information </h1>
+    </div>
+    <div class="form-check">
+      <h1 class="btn btn-primarysecond3">2-Add Reipcient</h1>
+    </div>
+    <div class="form-check">
+      <h1 class="btn btn-primarysecond3">3-Compose message</h1>
+    </div>
+    <div class="form-check">
+      <h1 class="btn btn-primarysecond3">4-Summary</h1>
+    </div>
+  </div>
+  <br>
+  <hr>
+    <form method="post" #registerform= "ngForm" style="margin-top: 49px;
+    height: 300px;" enctype="multipart/form-data">
+     
+
+      <div class="form-group col-sm-6 flex-column d-flex">  
+                   
+        <label for="pet-select">Chanel:</label>
+        <select id="pet-select"   [ngModel]="selectedDevice"
+         style="width:300px;" class="form-select"   [ngModel]="typeCompagne"
+        (ngModelChange)="selectText($event)" name="sel2" required >
+            <option  *ngFor="let variable of variables" 
+            [value]="variable">{{variable}}</option>
+        </select>   
+    </div>
+
+
+   
+                <div class="form-row">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                         <label class="form-control-label px-3">Nom Campagne
+                             <span class="text-danger"> *</span></label>
+                              <input type="text"  [(ngModel)]="nom" lang="ar" required
+                       name="titre"
+                        xml:lang="ar" class="form-control" > </div>
+                </div>
+                
+
+                <br><br><br><br>
+               
+                <div class="form-row">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Do you want to schedule later?
+                        </label>
+                        <input   style="height: 19px;
+                        margin-left: -90px;
+                        margin-top: -26px;" type="checkbox" 
+                              (change)="isSelected2($event)"
+                            [value]="1" id="flexCheckChecked" [checked]="ttt" >
+                  </div>
+                    <div   *ngIf="ttt==true" class="form-group col-sm-6 flex-column d-flex">
+                         <label class="form-control-label px-3">Date de creation
+                             <span class="text-danger"> *</span></label>
+                              <input type="datetime-local" lang="ar" 
+                              [(ngModel)]="dateshedule" value="test" 
+                       name="date" required
+                        xml:lang="ar" class="form-control" > </div>
+                </div>  
+                <br>     
+                <hr>  
+                <br>
+                <div>
+                  
+                  <div  *ngIf="ttt==false" class="float-right" >
+                      <button type="button" style=" background: #0061A5;
+                      width: 100px;" class="btn btn-primary" (click)='Suivant2()' 
+                      [disabled]="!registerform.form.valid || typeCompagne==='' || datecreation===''">Suivant </button>
+                  </div>
+                  <div  *ngIf="ttt==true" class="float-right" >
+                    <button type="button" style=" background: #0061A5;
+                    width: 100px;" class="btn btn-primary" (click)='Suivant2()' 
+                    [disabled]="!registerform.form.valid || typeCompagne==='' ||   datecreation===''">Suivant </button>
+                </div>
+                  <!--button type="button" (click)="functiiopdf()">Telecharger PDF</button-->
+                </div>  
+</form>
+</div> 
+
+</div>
+</div>
+</div>
+</div>  
+
+
+
+    

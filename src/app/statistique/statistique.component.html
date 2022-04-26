@@ -1,0 +1,249 @@
+   
+<table style="background-color: beige;" >
+    <!--tr><td>debut</td>
+    <td>fin</td>
+    </tr-->
+    <tr style="background-color: blue;">
+        <td><input  type="date" name="myDate" 
+             (change)="onChange($event)" [(ngModel)]='date1' >
+        </td> 
+        <td>
+            <input type="date" name="myDate2"
+            (change)="on2Change($event)" [(ngModel)]="date4"
+          >
+        </td>
+    </tr>
+</table>
+<div class="content" style="margin-top: -66px;">
+	<div class="container-fluid">
+	  <div class="row">
+		<div class="col-lg-3 col-md-6 col-sm-6">
+		  <div class="card card-stats">
+			<div class="card-header card-header-warning card-header-icon">
+			  <div class="card-icon">
+				<i class="material-icons"></i>
+			  </div>
+			  <p class="card-category">Total Completed Campagne</p>
+			  <h3 class="card-title">3</h3> 
+			  <h5 class="card-title">
+				<small>Campagne</small>
+			  </h5>
+			</div>
+			<div class="card-footer">
+			  <div class="stats">
+				<i class="material-icons text-danger"></i>
+				<a href="javascript:;"></a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6">
+		  <div class="card card-stats">
+			<div class="card-header card-header-success card-header-icon">
+			  <div class="card-icon">
+				<i class="material-icons"></i>
+			  </div>
+			  <p class="card-category">Total Ongoing Campagne</p>
+			  <h3 class="card-title">3</h3>
+			  <h5 class="card-title">
+				<small>Campagne</small>
+			  </h5>
+			</div>
+			<div class="card-footer">
+			  <div class="stats">
+				<i class="material-icons"></i> 
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6">
+		  <div class="card card-stats">
+			<div class="card-header card-header-danger card-header-icon">
+			  <div class="card-icon">
+				<i class="material-icons"></i>
+			  </div>
+			  <p class="card-category">Total Ongoing Campagne</p>	  
+			  <h3 class="card-title">75</h3>
+			  <h5 class="card-title">
+				<small>Campagne</small>
+			  </h5></div>
+			<div class="card-footer">
+			  <div class="stats">
+				<i class="material-icons"></i>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="card card-stats">
+			  <div class="card-header card-header-danger card-header-icon">
+				<div class="card-icon">
+				  <i class="material-icons"></i>
+				</div>
+				<p class="card-category">Total Ongoing Campagne</p>
+				
+				<h3 class="card-title">75</h3>
+			  
+				<h5 class="card-title">
+				  <small>Campagne</small>
+				</h5></div>
+			  <div class="card-footer">
+				<div class="stats">
+				  <i class="material-icons"></i>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  
+	  </div>
+
+<br> <hr>
+
+
+
+	  <div class="row">
+		<div class="col-md-4">
+		  <div class="card card-chart" style="height: 450px;
+		  width: 500px;">
+			<div class="card-header card-header-success">
+			  <div class="ct-chart" id="dailySalesChart"></div>
+			</div>
+			<div id="chart">
+				<ul id="numbers">
+				<li>
+					<span>1000</span></li>
+				   <li><span>0</span></li></ul>
+				<ul id="bars"><li>
+				<div data-percentage="56"  style="background-color: chartreuse;" class="bar">
+				</div>
+				<span>succee</span></li>
+				<li>
+				<div  [style.height]="data1 +'%'" style="background-color: #0061A5;"
+
+				class="bar">
+				</div><span>echec </span>
+				</li>
+				
+				</ul>
+				</div>
+			
+			<div class="card-footer">
+			  <div class="stats">
+				<i class="material-icons"></i> 
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-4">
+		  <div class="card card-chart" style="height: 450px;
+		  width: 500px; margin-left: 120px;">
+			<div class="card-header card-header-warning">
+			  <div class="ct-chart" id="websiteViewsChart"></div>
+			</div>
+			<div id="chart">
+				<ul id="numbers">
+				<li>
+					<span>1000</span></li>
+				   <li><span>0</span></li></ul>
+				<ul id="bars"><li>
+				<div data-percentage="56"  style="background-color: rgb(255, 123, 0);" class="bar">
+				</div>
+				<span>succee</span></li>
+				<li>
+				<div  [style.height]="data1 +'%'" style="background-color: #77c3fa;"
+
+				class="bar">
+				</div><span>echec </span>
+				</li>
+				
+				</ul>
+				</div>
+			
+			<div class="card-footer">
+			  <div class="stats">
+				<i class="material-icons"></i> 
+						  </div>
+			</div>
+		  </div>
+		</div>
+		
+	  </div>
+	</div>
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+			    <!--div class="row g-4 mb-4">
+				    <div class="col-6 col-lg-3">
+					    <div class="app-card app-card-stat shadow-sm h-100">
+						    <div class="app-card-body p-3 p-lg-4">
+							    <h4 class="stats-type mb-1">Total Completed Campagne</h4>
+							    <div class="stats-figure">{{numbercompagne}}</div>
+						
+						    </div>
+						    <a class="app-card-link-mask" href="#"></a>
+					    </div>
+				    </div>
+				    <div class="col-6 col-lg-3">
+					    <div class="app-card app-card-stat shadow-sm h-100">
+						    <div class="app-card-body p-3 p-lg-4">
+							    <h4 class="stats-type mb-1">Total Ongoing Campagne</h4>
+							    <div class="stats-figure">2</div>
+						    </div>
+						    <a class="app-card-link-mask" href="#"></a>
+					    </div>
+				    </div>
+				    <div class="col-6 col-lg-3">
+					    <div class="app-card app-card-stat shadow-sm h-100">
+						    <div class="app-card-body p-3 p-lg-4">
+							    <h4 class="stats-type mb-1">Total Scheduled Campagne</h4>
+							    <div class="stats-figure">23</div>
+						    </div>
+						    <a class="app-card-link-mask" href="#"></a>
+					    </div>
+				    </div>
+				    <div class="col-6 col-lg-3">
+					    <div class="app-card app-card-stat shadow-sm h-100">
+						    <div class="app-card-body p-3 p-lg-4">
+							    <h4 class="stats-type mb-1">Total Failed Campagne</h4>
+							    <div class="stats-figure">6</div>
+						    </div>						    <a class="app-card-link-mask" href="#"></a>
+					    </div>
+						    </div>
+			    </div>
+                <br>
+                <br>
+                <hr style="width: 50%;">
+				<div class="card" style="width :40%;">
+					<div id="chart">
+						<ul id="numbers">
+						<li>
+							<span>1000</span></li>
+						   <li><span>0</span></li></ul>
+						<ul id="bars"><li>
+						<div data-percentage="56"  style="background-color: chartreuse;" class="bar">
+						</div>
+						<span>succee</span></li>
+						<li>
+						<div  [style.height]="data1 +'%'" style="background-color: #0061A5;"
+	
+						class="bar">
+						</div><span>echec </span>
+						</li>
+						
+						</ul>
+						</div>
+					</div-->

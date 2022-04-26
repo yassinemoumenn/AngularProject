@@ -1,0 +1,80 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>  </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-md-8">
+         <form #modForm = "ngForm" method="POST">
+              <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">old password</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input class="input--style-5" type="password"   
+                            [(ngModel)]="oldpass.password" name="Number"
+                             required>
+                        </div>
+
+                    </div>
+                    <div ngModelGroup="password" #userPassword="ngModelGroup" required >
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">new password</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="password" 
+                            ngModel name="pwd"
+                            id="inputPassword" placeholder="Password"
+                            minlength ="8"    [(ngModel)]="newpass.password" class="form-control" required
+                           >
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">confirm password</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="password"    ngModel name="confirmPwd"
+                            id="confirmPassword" placeholder="Confirm Password"  class="form-control" 
+                            required>
+                        </div>
+                    </div>
+
+                    <div *ngIf="(userPassword.invalid|| userPassword.value?.pwd != userPassword.value?.confirmPwd) && (userPassword.touched)"
+                    class="alert alert-danger">
+                     
+                    <div *ngIf = "userPassword.invalid; else nomatch">
+                        Password needs to be more than 8 characters
+                    </div>
+                        <ng-template #nomatch >
+                            Passwords don't match
+                        </ng-template>
+                    </div>
+                </div>   
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9 text-secondary">
+                            <input type="button" [disabled]="!modForm.form.valid || userPassword.invalid" 
+                             (click)="modifierpassword()"
+                            class="btn btn-primary px-4" value="Save Changes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+            </div>
+        </div>
+    </div>

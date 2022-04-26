@@ -1,0 +1,51 @@
+<div  class="wrapper d-flex align-items-stretch">
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Creer Compagne courrier </h2>
+                    </div>        
+        <div class="row gutters-sm">
+            <div class="col-md-14">
+<div class="contact-clean">  
+                <form class="md-form" #envmesssag = "ngForm">
+                    <label for="pet-select">choisir un model:</label>
+                    <select id="pet-select"  style="width:300px;" class="form-select"  
+                     [ngModel]="selectedDevice"
+                     (ngModelChange)="onChange2($event)" name="sel2" >
+                        <option value="">Select un courrier</option>
+                        <option  *ngFor="let courrier of courriers" 
+                        [value]="courrier.titre">{{courrier.titre}}</option>
+                    </select> 
+
+                <div>
+                    <div class="value">
+                        <div class="input-group-desc">
+                            <label for="file" class="label-file"> <div class="name">Importer un fichier</div></label>
+                            <input type="file" id="file"  class="input-file"  
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9 text-secondary">
+                        <input type="button"   (click)="publipostage()"
+                        class="btn btn-primary px-4" value="evoyer">
+                    </div>
+                </div>
+                  </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+    </div>
+
+
+    

@@ -1,0 +1,11 @@
+
+.centrage {text-align: center;}
+div#compteur {
+    position: absolute; /* le bloc se positionnera en haut à gauche de ta page car il n'a pas de bloc parent */
+    bottom: 0; /* avec cette propriété, le bloc se placera tout en bas à gauche de ta page */
+    width: 100%; /* il aura une largeur de 100%, donc toute la page */
+}
+ 
+div#compteur p {
+    text-align: center; 
+}

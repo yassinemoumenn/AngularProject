@@ -1,0 +1,43 @@
+<div  class="wrapper d-flex align-items-stretch">
+   
+  <div>
+  <app-nav-hor ></app-nav-hor>
+
+  </div>
+ 
+      <!-- Page Content  -->
+      <div id="content" class="p-1 p-md-1 pt-1">
+      
+<form >  
+           
+  <div class="col-sm-2 col-md-2 col-lg-2"> 
+    <label >ID  Produit</label> 
+    <input   type="number"  [(ngModel)]="newutil.id"   
+        name="id" class="form-control"> 
+   </div> 
+
+  <div class="col-sm-4 col-md-4 col-lg-4" > 
+    <label >Nom Produit</label> 
+    <input  type="text"[(ngModel)]= "newutil.nom"   
+        name="nom" class="form-control"> 
+  </div> 
+
+  <div class="col-sm-2 col-md-2 col-lg-2"> 
+    <label >Prix Produit</label> 
+    <input type="text"   [(ngModel)]= "newutil.password"   
+        name="password" class="form-control"> 
+  </div> 
+
+  <div class="col-sm-4 col-md-4 col-lg-4"> 
+      <label >Date création</label> 
+      <input type="date"  [(ngModel)]= "newutil.date"  
+          name="date" class="form-control"> 
+  </div> 
+    
+<div class="mt-2"> 
+   <button type="button"  (click)="addUtilt()"  class="btn btn
+success">Ajouter</button> 
+   </div>    
+</form> 
+</div>
+</div>

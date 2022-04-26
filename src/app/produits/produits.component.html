@@ -1,0 +1,22 @@
+<div  class="wrapper d-flex align-items-stretch">
+   
+    <div>
+    <app-nav-hor ></app-nav-hor>
+  
+    </div>
+   
+        <!-- Page Content  -->
+        <div id="content" class="p-1 p-md-1 pt-1">
+        
+<p>produits works!</p>
+<div class="container">   <div class="card shadow mb-4">                        
+    <div class="card-body">       <table >             
+        <thead>                <tr>                
+            <th>Liste des ut</th>               </tr>             
+         </thead>                                              
+         <tbody *ngFor="let produit of produits">                       
+              <tr >                          <td>{{produit}}</td>                       
+              </tr>                                                    
+</tbody>     </table>     </div>   </div> </div>
+</div>
+</div>

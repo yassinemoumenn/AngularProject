@@ -1,0 +1,93 @@
+
+    <div id="content" class="p-1 p-md-1 pt-1">
+        <div >
+          <div >
+              <div>
+<div style="height: 500px;">
+
+  <div class="form-row" > 
+    <div class="form-check">
+      <h1 class="btn btn-primarysecond2">1-Generation Information </h1>
+    </div>
+    <div class="form-check">
+      <h1 class="btn btn-primary">2-Add Reipcient</h1>
+    </div>
+    <div class="form-check">
+      <h1 class="btn btn-primarysecond3">3-Compose message</h1>
+    </div>
+    <div class="form-check">
+      <h1 class="btn btn-primarysecond3">4-Summary</h1>
+    </div>
+  </div>
+  <br>
+  <hr>
+    <form  method="post" #registerform= "ngForm" enctype="multipart/form-data">
+      
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Example file input </label>
+            <input type="file"  value="C:\\Users\\anouar gmili\\Desktop\test2.csv" 
+            accept=".csv"  class="form-control-file"   
+            (change)="changeListener($event.target.files)" required 
+            id="exampleFormControlFile1" >
+          </div>
+          <table class="table" *ngIf='table==="true"' >
+            <thead class=" text-primary">
+              <tr>
+                <th scope="col">nom</th>
+                <th scope="col"> taillle</th>
+                <th scope="col">type</th>
+                <th scope="col">lignes</th>
+                                              
+              </tr>
+            </thead>
+            <tbody> 
+              <tr > 
+                <td >{{nomfile}}</td> 
+                <td>{{taillefile}} kb </td> 
+                <td>{{typefile}}</td> 
+                <td>{{nombreligne}} </td> 
+           
+                                        </tr>                                     
+                                                  
+   </tbody> 
+          </table>
+
+        <br>
+        <br>
+      
+        
+     
+                <hr>  
+                <div>
+                  
+                  <div class="float-right"  >
+                    <table style="    width: 300px;"> 
+                      <tr>
+                        <th>
+                          <button type="button" class="btn btn-primaryprecedent" (click)='precedent()' 
+                          >Precedent</button> 
+                        </th>
+                        <th>
+                          <button  [disabled]="table==='false'"
+                           type="button" class="btn btn-primarysuivant"
+                            (click)='suivant()'
+                          >Suivant </button>
+                        
+                        </th>
+                      </tr>
+                    </table>
+                  </div>
+                   
+                  <!--button type="button" (click)="functiiopdf()">Telecharger PDF</button-->
+                </div>  
+</form>
+</div> 
+
+</div>
+</div>
+</div>
+</div>  
+
+
+
+    

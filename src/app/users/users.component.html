@@ -1,0 +1,109 @@
+
+
+
+ 
+      <!-- Page Content  -->
+      <div id="content" class="p-1 p-md-1 pt-1">
+<div class="container">   
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row" style="    width: 1350px;">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 *ngIf='typeuser=="client"' class="card-title ">Tables des utilisateur</h4>
+              <h4 *ngIf='typeuser=="admin"' class="card-title ">Tables des Clients</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                  
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">nom</th>
+                        <th scope="col">prenom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">adress</th>
+                        <th scope="col">number</th>
+                        <th scope="col">cin</th>
+                        <th scope="col">ville</th>
+                       
+                      </tr>
+                  
+                  </thead>
+
+                  <tbody *ngFor="let user of users  ">  
+                    <tr  > 
+                       <td scope="row">{{user.id}}</td> 
+                       <td>{{user.nom }} </td> 
+                       <td>{{user.prenom}}</td> 
+                       <td>{{user.email }}</td> 
+                       <td>{{user.adress }}</td> 
+                       <td>{{user.number}}</td> 
+                       <td>{{user.cin}}</td> 
+                       <td>{{user.ville}}</td> 
+                       <!--td><a class="btn btn-danger" (click)="supprimerUtil(util)">Supprimer</a></td--> 
+                     </tr>                                     
+                                                        
+         </tbody> 
+         <!--tbody  *ngIf="typeuser='client'" *ngFor="let user of utilisateur ">  
+          <tr > 
+             <td scope="row">{{utilisateur.id}}</td> 
+             <td>{{user.nom }} </td> 
+             <td>{{user.prenom}}</td> 
+             <td>{{user.email }}</td> 
+             <td>{{user.adress }}</td> 
+             <td>{{user.number}}</td> 
+             <td>{{user.cin}}</td> 
+             <td>{{user.ville}}</td> 
+             <!-td><a class="btn btn-danger" (click)="supprimerUtil(util)">Supprimer</a></td> 
+           </tr>                                     
+                                              
+</tbody--> 
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--div class="card shadow mb-4">                        
+    <div class="card-body">     
+          <table class="table table-striped" >            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">nom</th>
+              <th scope="col">prenom</th>
+              <th scope="col">Email</th>
+              <th scope="col">adress</th>
+              <th scope="col">number</th>
+              <th scope="col">cin</th>
+              <th scope="col">ville</th>
+             
+            </tr>
+          </thead>
+                                                  
+    <tbody *ngFor="let user of users  ">  
+            <tr > 
+               <td scope="row">{{user.id}}</td> 
+               <td>{{user.nom }} </td> 
+               <td>{{user.prenom}}</td> 
+               <td>{{user.email }}</td> 
+               <td>{{user.adress }}</td> 
+               <td>{{user.number}}</td> 
+               <td>{{user.cin}}</td> 
+               <td>{{user.ville}}</td> 
+               <!--td><a class="btn btn-danger" (click)="supprimerUtil(util)">Supprimer</a></td> 
+             </tr>                                     
+                                                
+  </tbody>     
+  </table>    
+ </div>   
+</div-->
+ </div>
+ </div>

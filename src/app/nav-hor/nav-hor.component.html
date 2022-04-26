@@ -1,0 +1,179 @@
+<nav id="sidebar"  style="height: 100%;"  class="desactive">
+  
+  <div class="custom-menu">
+  </div>
+  <div class="p-4">
+    <div style="margin-left:47px"> 
+      <img [src]="urlimagelogo"  style="height: 3cm;width:4cm"
+      class="img-lg rounded-circle mb-4"
+       alt="profile image">
+              </div>
+              <br>
+              <br>
+
+    <!--h1><a  routerLink="/home"
+        class="logo">Profil {{typeuser}}
+      </a></h1-->
+    <ul class="list-unstyled components mb-5">
+      <!--li>
+        <a  routerLink="/add-utils"><span class="fa fa-briefcase mr-3"></span> test</a>
+      </li-->
+      <!--li>
+        <a href="/utilisateur"><span class="fa fa-sticky-note mr-3"></span> les utilisateurs</a>
+      </li-->
+  
+      <li>
+        <a href="/statistique"><span class="glyphicon glyphicon-stats"></span>  Statistique</a>
+      </li>
+
+      <li>
+        <a href="/users">
+          <span class="
+          glyphicon glyphicon-align-justify">
+          </span>  Liste des utilisateurs
+        </a>  
+      </li>
+      <li class="active" *ngIf='typeuser=="admin"'>
+        <a href="#homeSubmenu" 
+        (click)="changeid()"
+        data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+           <span class="fa fa-home mr-3"></span>Client</a>
+        <ul class="collapse list-unstyled"  id={{iduser}}>
+          <li>
+            <a href="/ajouteruser"><span class="fa fa-user mr-3"></span> Ajouter un Client</a>
+          </li>
+          <li>
+            <a href="/users"><span class="fa fa-home mr-3"></span> Liste des Clients</a>          </li>
+        </ul>
+      </li>
+    
+   
+      <!--li>
+        <a href="/messagesimple"><span class="fa fa-paper-plane mr-3"></span>Message simple</a>
+      </li-->
+      <!--li>
+        <a href="/clientcontroller"><span class="fa fa-paper-plane mr-3"></span>charger client</a>
+      </li-->
+         
+      <li>
+        <a href="/crcomapgne"  (click)='creercompagne()' >
+          <span class="glyphicon glyphicon-plus">
+        </span> Creer Compagne </a>
+      </li>
+     
+      <!--li>
+        <a href="/facture"><span class="fa fa-paper-plane mr-3"></span>facture</a>
+      </li>
+      <li>
+        <a href="/creercompagne" ><span class="fa fa-paper-plane mr-3"></span> publipostage</a>
+      </li-->
+      <li>
+        <a href="/management Campagne" ><span class="glyphicon glyphicon-lock"></span>
+              management Campagne</a>
+      </li>
+  
+      
+      <li>
+        <a href="#homeSubmenu" 
+        (click)="changeid2()"
+        data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+           <span class="glyphicon glyphicon-bookmark"></span> Models Courrier</a>
+        <ul class="collapse list-unstyled" id="{{idcourrier}}">  
+          <li>
+            <a href="/addcourrier"><span class="glyphicon glyphicon-plus"></span> Creer Model courrier </a>
+          </li>
+          <!--li>
+            <a href="/config"><span class="fa fa-user mr-3"></span>creer template courrier </a>
+          </li-->
+          <li>
+            <a href="/templatce"><span class="glyphicon glyphicon-list"></span> Liste des Courriers</a>          </li>
+        </ul>
+      </li> 
+      <li  >
+        <a href="#homeSubmenu"
+        (click)="changeid3()"
+        data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+           <span class="glyphicon glyphicon-file"></span> Facture</a>
+        <ul class="collapse list-unstyled" id={{idfacture}}>
+          <li>
+            <a href="/facture"><span class="glyphicon glyphicon-th-list"></span> Facture wathssapp</a>
+          </li>
+          <li>
+            <a href="/facturesms"><span class="glyphicon glyphicon-th-list"></span> Facture sms</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/messagevariable"><span class="fa fa-paper-plane mr-3"></span> Vcard</a>
+      </li>
+     
+      <li>
+        <a href="login2" (click)="deconnexion()">
+          <span class="
+          glyphicon glyphicon-off"></span> Deconnexion</a>
+      </li>
+      <li>
+      <!--button  (click)="deconnexion()"><span class="fa fa-sticky-note"></span>
+        Deconnexion
+      </button-->
+    </li>
+    </ul>
+    <div class="footer">
+      <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.linkedin.com/in/anouar-gmili-96a6b61b4/" target="_blank">Gmili Anouar</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+    </div>
+  </div>
+</nav>
+
+<!--nav id="sidebar">
+  <div class="p-4 pt-5">
+    <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+    <ul class="list-unstyled components mb-5">
+      <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li>
+              <a href="#">Home 1</a>
+          </li>
+          <li>
+              <a href="#">Home 2</a>
+          </li>
+          <li>
+              <a href="#">Home 3</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+          <a href="#">About</a>
+      </li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+              <a href="#">Page 1</a>
+          </li>
+          <li>
+              <a href="#">Page 2</a>
+          </li>
+          <li>
+              <a href="#">Page 3</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Portfolio</a>
+      </li>
+      <li>
+        <a href="#">Contact</a>
+      </li>
+    </ul>
+
+    <div class="footer">
+      <p>< jj Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. >
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+        <jj Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. ></p>
+    </div>
+
+  </div>
+</nav-->

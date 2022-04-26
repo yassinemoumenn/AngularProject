@@ -1,0 +1,58 @@
+
+<div  class="wrapper d-flex align-items-stretch">
+   
+  <div>
+  <app-nav-hor ></app-nav-hor>
+
+  </div>
+ 
+      <!-- Page Content  -->
+      <div id="content" class="p-1 p-md-1 pt-1">
+       
+      
+<p>utils works!</p>
+<div class="container">   
+    <div class="card shadow mb-4">                        
+    <div class="card-body">     
+          <table class="table table-striped" >            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">nom</th>
+              <th scope="col">prenom</th>
+              <th scope="col">Email</th>
+              <th scope="col">adress</th>
+              <th scope="col">password</th>
+              <th scope="col">number</th>
+              <th scope="col">cin</th>
+              <th scope="col">ville</th>
+             
+            </tr>
+          </thead>
+                                                  
+    <tbody *ngFor="let user of users">  
+            <tr > 
+               <td  scope="row">{{user.id}}</td> 
+               <td>{{user.nom}} </td> 
+               <td>{{user.prenom}}</td> 
+               <td>{{user.email }}</td> 
+               <td>{{user.adress }}</td> 
+               <td>{{user.number}}</td> 
+               <td>{{user.cin}}</td> 
+               <td>{{user.ville}}</td> 
+ 
+
+               
+
+
+               <td><a class="btn btn-danger" (click)="supprimerUtil(util)">Supprimer</a></td> 
+             </tr>                                     
+                                                
+ </tbody>     
+</table>    
+ </div>   
+</div>
+ </div>
+
+</div>
+</div>
+ 
